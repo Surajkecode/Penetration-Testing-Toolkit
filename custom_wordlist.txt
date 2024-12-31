@@ -1,0 +1,8 @@
+admin/
+login/
+dashboard/
+uploads/
+images/
+test/
+config/
+backup/

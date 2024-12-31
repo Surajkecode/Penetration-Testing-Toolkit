@@ -1,0 +1,224 @@
+Here's a more **detailed documentation** for your **Penetration Testing Toolkit**. This documentation is intended to provide in-depth guidance on each module, setup, usage, and potential issues.
+
+---
+
+# Penetration Testing Toolkit
+
+## Developer Information:
+
+- **Developer**: Suraj Borkute
+- **Company**: Codtech IT Solutions
+- **Employee ID**: CT08DSM
+- **Domain**: Cyber Security & Ethical Hacking
+- **Project Duration**: December 2024 to January 2025
+- **Mentor**: Neela Santosh Kumar
+
+---
+
+## Overview
+
+The **Penetration Testing Toolkit** is a Python-based suite developed for penetration testers and cybersecurity professionals to assess and analyze the security of web applications and networks. This toolkit automates the process of scanning for vulnerabilities, brute-forcing login attempts, analyzing HTTP headers, and more. It provides an easy-to-use interface to test common attack vectors and generate detailed reports.
+
+The toolkit consists of multiple modules, each performing a specific security test. The user-friendly command-line interface (CLI) allows penetration testers to choose from a variety of tests to run against a target system or web application.
+
+---
+
+## Features
+
+### 1. **Port Scanner**
+   - Scans a given IP address or domain for open ports.
+   - Helps identify potentially vulnerable services running on the target.
+   
+### 2. **Brute Force Login**
+   - Attempts to brute-force a login form (HTTP or SSH) using a list of common usernames and passwords.
+   - Useful for testing weak password policies on login systems.
+   
+### 3. **HTTP Header Analyzer**
+   - Analyzes HTTP response headers from a given URL.
+   - Checks for security misconfigurations, such as missing headers (e.g., `Strict-Transport-Security`, `X-Content-Type-Options`, etc.).
+   
+### 4. **Directory Buster**
+   - Uses a wordlist to discover hidden directories and files on a target web server.
+   - Helps find unauthorized or forgotten files that could lead to vulnerabilities.
+
+### 5. **Network Sniffer**
+   - Captures and analyzes network packets using the `scapy` or `libpcap` library.
+   - Provides real-time packet analysis for identifying security flaws and monitoring traffic.
+
+### 6. **SSL/TLS Certificate Scanner**
+   - Checks the SSL/TLS certificates of a given website.
+   - Verifies the validity and strength of the certificates to ensure encrypted communication is secure.
+
+### 7. **Vulnerability Scanner**
+   - Scans for common security vulnerabilities such as SQL injection, cross-site scripting (XSS), and open ports.
+   - Performs checks for known vulnerabilities to identify weak spots in a system.
+
+### 8. **Report Generation**
+   - After running the tests, generates a detailed HTML report summarizing the findings.
+   - Provides an easy way to review and share the results with stakeholders.
+
+---
+
+## System Requirements
+
+Before using the Penetration Testing Toolkit, ensure that your system meets the following requirements:
+
+- **Operating System**: Windows, macOS, or Linux.
+- **Python Version**: Python 3.10 or higher.
+- **Required Libraries**: A list of Python dependencies (provided in `requirements.txt`).
+  
+For **Windows** users, you will need administrative privileges for modules like network sniffing to work correctly.
+
+---
+
+## Installation Instructions
+
+### Step 1: Clone the Repository
+
+First, clone the repository to your local machine using Git:
+
+```bash
+git clone https://github.com/Surajkecode/penetration-testing-toolkit.git
+```
+
+### Step 2: Set Up the Virtual Environment
+
+To isolate the dependencies for this project, create a virtual environment in the project directory:
+
+```bash
+python -m venv venv
+```
+
+Activate the virtual environment:
+
+- On **Windows**:
+  ```bash
+  venv\Scripts\activate
+  ```
+- On **macOS/Linux**:
+  ```bash
+  source venv/bin/activate
+  ```
+
+### Step 3: Install Dependencies
+
+Once the virtual environment is activated, install the required Python libraries by running:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Usage
+
+### Running the Toolkit
+
+After setting up the environment, you can start the toolkit by running the `main.py` script:
+
+```bash
+python main.py
+```
+
+The script will present a menu to the user, where they can select a specific testing module to execute.
+
+### Menu Options:
+
+1. **Port Scanner**: Scan for open ports on the target IP or domain.
+2. **Brute Force Login**: Brute force a login form (HTTP or SSH).
+3. **HTTP Header Analyzer**: Analyze the HTTP headers of the target URL.
+4. **Directory Buster**: Discover hidden directories and files on a web server using a wordlist.
+5. **Network Sniffer**: Capture and analyze network packets in real-time.
+6. **SSL/TLS Certificate Scanner**: Check SSL/TLS certificates for vulnerabilities.
+7. **Vulnerability Scanner**: Scan the target system for known vulnerabilities.
+8. **Generate Report**: Create a detailed HTML report summarizing the findings of the tests.
+
+---
+
+## Detailed Explanation of Modules
+
+### 1. Port Scanner
+
+This module scans a given target IP address or domain for open ports. It helps identify services that are running and might be vulnerable to exploitation. A range of ports or specific ports can be provided for scanning.
+
+- **Input**: Target IP/domain and port range.
+- **Output**: List of open ports.
+
+### 2. Brute Force Login
+
+This module attempts to brute-force login credentials on HTTP and SSH login forms. It uses a wordlist containing common usernames and passwords to try and authenticate with the system.
+
+- **Input**: Target URL (HTTP/HTTPS or SSH), username and password wordlist.
+- **Output**: Success or failure message indicating the potential vulnerability of the login form.
+
+### 3. HTTP Header Analyzer
+
+This module sends a request to the target URL and analyzes the response headers. It checks for the presence of critical security headers such as `X-Content-Type-Options`, `Strict-Transport-Security`, etc.
+
+- **Input**: Target URL.
+- **Output**: List of HTTP response headers and analysis.
+
+### 4. Directory Buster
+
+This module uses a wordlist to attempt to discover hidden directories and files on the target web server. It helps identify potentially vulnerable or unprotected resources.
+
+- **Input**: Target URL and a wordlist of directory names.
+- **Output**: List of discovered directories or files.
+
+### 5. Network Sniffer
+
+This module captures packets from the network and analyzes the traffic in real-time. It can be used to monitor network activity for signs of suspicious behavior or to debug network-related issues.
+
+- **Input**: Network interface (e.g., `eth0`).
+- **Output**: Real-time packet capture.
+
+### 6. SSL/TLS Certificate Scanner
+
+This module checks the SSL/TLS certificates of a target website to ensure they are valid and properly configured. It looks for issues like expired certificates, weak encryption, and misconfigurations.
+
+- **Input**: Target URL (HTTPS).
+- **Output**: SSL certificate details and vulnerability analysis.
+
+### 7. Vulnerability Scanner
+
+This module scans the target for common vulnerabilities like SQL injection, cross-site scripting (XSS), and others. It uses a set of predefined checks to identify weaknesses.
+
+- **Input**: Target URL or IP address.
+- **Output**: List of discovered vulnerabilities.
+
+### 8. Report Generation
+
+This module generates an HTML report after completing any test. The report includes the test type, target, result summary, and recommendations for improving security.
+
+- **Input**: Test type, target URL, and results.
+- **Output**: A saved HTML report in the `reports/` directory.
+
+---
+
+## Troubleshooting
+
+- **Error: [Errno 11001] getaddrinfo failed**: This error occurs when the target URL cannot be resolved. Ensure that the URL is correct and accessible from your machine.
+- **SSL Certificate Not Found**: This issue happens when SSL certificates cannot be verified or are invalid. Verify the target website’s SSL certificate via a browser.
+- **Permission Denied**: Some modules, like the network sniffer, may require elevated privileges. Run the script with administrative or root permissions.
+- **Missing Libraries**: Ensure that all libraries are correctly installed. If any module is missing, run `pip install -r requirements.txt` again.
+
+---
+
+## Contact
+
+For any inquiries or assistance, feel free to contact:
+
+- **Developer**: Suraj Borkute
+- **GitHub**: [https://github.com/Surajkecode](https://github.com/Surajkecode)
+- **Email**: [surajborkute9881392842@gmail.com](mailto:surajborkute9881392842@gmail.com)
+- **LinkedIn Profile**: [https://www.linkedin.com/in/suraj-borkute-512665341](https://www.linkedin.com/in/suraj-borkute-512665341)
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+This **detailed documentation** provides a complete overview of your toolkit's setup, usage, and troubleshooting. It’s designed to help users effectively utilize your Penetration Testing Toolkit and understand each component of the project.

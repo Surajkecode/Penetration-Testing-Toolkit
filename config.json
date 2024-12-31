@@ -1,0 +1,5 @@
+{
+    "proxy_list": ["http://proxy1.com", "http://proxy2.com"],
+    "timeout": 5,
+    "user_agents": ["Mozilla/5.0", "Chrome/92.0"]
+}
